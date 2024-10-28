@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Ratna Puspita Sari!</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Background Audio -->
+    <audio id="backgroundAudio" src="assets/audio/background-music.mp3" autoplay loop></audio>
+
+    <!-- Scene 1: Opening -->
+    <div id="scene1" class="scene">
+        <div class="message-container glass">
+            <img src="assets/images/envelope.gif" alt="Amplop" class="envelope">
+            <p>Klik amplop ini untuk membuka 🎉</p>
+            <button class="btn" onclick="showInput()">Buka</button>
+        </div>
+    </div>
+
+    <!-- Scene 2: Masukkan Nama Kamu -->
+    <div id="scene2" class="scene" style="display:none;">
+        <div class="message-container glass">
+            <img src="assets/images/cute-gif.gif" alt="Cute GIF" class="cute-gif">
+            <h1 id="scene2-text"></h1>
+            <input type="text" id="userName" placeholder="Masukkan nama kamu">
+            <button class="btn" onclick="showBirthdayMessage()">OK</button>
+            <p id="scene2-subtext" style="display:none;"></p> <!-- Subtext untuk scene 2 -->
+        </div>
+    </div>
+
+    <!-- Scene 3: Ucapan Selamat -->
+    <div id="scene3" class="scene" style="display:none;">
+        <div class="message-container glass">
+            <img src="assets/images/gif1.gif" alt="Celebration" class="gif">
+            <h1 id="scene3-text"></h1>
+            <p id="scene3-subtext" style="display:none;">Aku ada pesan untukmu nih... klik untuk lanjut.</p> <!-- Subtext untuk scene 3 -->
+            <button class="btn" onclick="showStars()">Lanjut</button>
+        </div>
+    </div>
+
+    <!-- Scene 4: Rating Bintang -->
+    <div id="scene4" class="scene" style="display:none;">
+        <div class="message-container glass">
+            <img src="assets/images/gif2.gif" alt="Star" class="gif">
+            <h1 id="scene4-text"></h1>
+            <p id="scene4-subtext" style="display:none;">Klik 5 bintang di bawah!</p> <!-- Subtext untuk scene 4 -->
+            <div class="stars">
+                <span onclick="rateStar(this)">⭐</span>
+                <span onclick="rateStar(this)">⭐</span>
+                <span onclick="rateStar(this)">⭐</span>
+                <span onclick="rateStar(this)">⭐</span>
+                <span onclick="rateStar(this)">⭐</span>
+            </div>
+        </div>
+    </div>
+
+<!-- Scene 5: Pesan Spesial -->
+<div id="scene5" class="scene">
+    <div class="message-container glass">
+        <img src="assets/images/gif3.gif" alt="Message" class="gif">
+        <p id="scene5-text"></p>
+        <button class="btn" onclick="showGift()">Lanjut</button>
+    </div>
+</div>
+
+
+    <!-- Scene 6: Pilihan Kado -->
+    <div id="scene6" class="scene" style="display:none;">
+        <div class="message-container glass">
+            <img src="assets/images/gif4.gif" alt="Gift" class="gif">
+            <h1>Ratna, mau kado nggak nih?</h1>
+            <div class="gift-buttons">
+                <button class="gift-btn gift-btn-blue" onclick="showClosing()">Mau</button>
+                <button class="gift-btn gift-btn-red" onclick="showNoGift()">Engga</button>
+            </div>
+            <p id="scene6-subtext" style="display:none;"></p> <!-- Subtext untuk scene 6 -->
+        </div>
+    </div>
+
+    <!-- Scene 7: Closing -->
+    <div id="scene7" class="scene" style="display:none;">
+        <div class="message-container glass">
+            <img src="assets/images/gif5.gif" alt="Closing" class="gif">
+            <h1 id="scene7-text"></h1>
+            <button class="btn" onclick="showClosingPhoto()">Lihat Foto</button>
+            <p id="scene7-subtext" style="display:none;"></p> <!-- Subtext untuk scene 7 -->
+        </div>
+    </div>
+
+    <!-- Scene 8: Closing Photo -->
+    <div id="scene8" class="scene" style="display:none;">
+        <div class="message-container glass">
+            <img id="closingPhoto" src="assets/images/closing-photo.jpg" alt="Closing Photo" class="closing-photo">
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

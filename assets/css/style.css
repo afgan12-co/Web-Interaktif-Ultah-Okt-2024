@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #ffc0cb;
+    overflow: hidden;
+}
+
+.scene {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.message-container {
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 300px;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.gif {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.btn, .gift-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+.btn:hover, .gift-btn:hover {
+    transform: scale(1.05);
+}
+
+.stars span {
+    font-size: 2em;
+    cursor: pointer;
+    color: #ffd700;
+    margin: 0 5px;
+}
+
+.gift-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.gift-btn-blue { background-color: #3498db; }
+.gift-btn-red { background-color: #e74c3c; }
+
+.fade-in { animation: fadeIn 1s forwards; }
+.fade-out { animation: fadeOut 1s forwards; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Foto di scene penutupan */
+.closing-photo {
+    width: 720px;                /* Set ukuran asli lebar */
+    height: 1280px;              /* Set ukuran asli tinggi */
+    margin: 0;                   /* Hapus margin untuk foto penuh */
+    display: block;
+    border-radius: 20px;         /* Membuat sudut sedikit membulat */
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 1s;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan untuk tampilan yang menonjol */
+
+    /* Menambahkan transform untuk memperkecil ukuran tampilan */
+    transform: scale(0.7);       /* Ubah nilai ini untuk memperkecil atau memperbesar */
+    transform-origin: center;     /* Mengatur titik pusat transformasi */
+    
+    /* Menambahkan border tipis berwarna putih */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Border tipis berwarna putih */
+}
+
+#scene8 .message-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;               /* Jarak di dalam container */
+    background: rgba(255, 255, 255, 0.6); /* Warna latar belakang dengan transparansi */
+    border-radius: 5px;          /* Membuat sudut sedikit membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk tampilan yang menonjol */
+}
+
+.envelope {
+    width: 150px;
+    animation: envelopeZoom 2s ease-in-out infinite alternate;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+@keyframes envelopeZoom {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(1.1); opacity: 0.9; }
+}
+
+/* GIF di scene input nama */
+.cute-gif {
+    width: 80px;
+    margin-bottom: 15px;
+    animation: bounce 1.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+/* Bintang yang menghilang saat diklik */
+.star {
+    transition: opacity 0.5s ease;
+}
+
+/* Warna kursor berubah saat di atas tombol */
+.btn:hover {
+    cursor: pointer;
+    background-color: #ff69b4; /* Ubah warna latar belakang menjadi pink */
+    color: #fff;
+}
+.typing {
+    border-right: 2px solid rgba(0, 0, 0, 0.7); /* Kursor pengetikan */
+    white-space: nowrap; /* Mencegah teks membungkus */
+    overflow: hidden; /* Menyembunyikan teks yang belum ditampilkan */
+}
